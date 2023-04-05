@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#343A40"
+    tools:context=".Update">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarUpdate"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/purple_500"
+        app:titleTextColor="@color/white"
+        app:layout_constraintTop_toTopOf="parent"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    </androidx.appcompat.widget.Toolbar>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_marginRight="50dp"
+        android:layout_marginLeft="50dp"
+        android:background="@drawable/round_rec"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <EditText
+            android:layout_marginTop="40dp"
+            android:id="@+id/ipaddress"
+            android:layout_width="wrap_content"
+            android:layout_height="44dp"
+            android:paddingStart="15dp"
+            android:ems="10"
+            android:textColor="#D2343A40"
+            android:textColorHint="#75343A40"
+            android:inputType="textPersonName"
+            android:background="@drawable/border_rec"
+            android:hint="Ip Address" />
+
+        <EditText
+            android:layout_marginTop="20dp"
+            android:id="@+id/port"
+            android:textColorHint="#75343A40"
+            android:layout_width="wrap_content"
+            android:layout_height="44dp"
+            android:paddingStart="15dp"
+            android:ems="10"
+            android:textColor="#D2343A40"
+            android:inputType="textPersonName"
+            android:background="@drawable/border_rec"
+            android:hint="Port No." />
+
+        <Button
+            android:background="@color/purple_200"
+            android:layout_margin="40dp"
+            android:id="@+id/submit"
+            android:layout_width="wrap_content"
+            android:layout_height="44dp"
+            android:text="Configure" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

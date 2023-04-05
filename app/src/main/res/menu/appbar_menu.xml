@@ -1,0 +1,15 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/menu_item1"
+        android:title="Configure"
+        android:icon="@drawable/baseline_settings_24"
+         />
+    <item android:id="@+id/menu_item2"
+        android:title="Logout"
+        android:icon="@drawable/baseline_logout_24"
+        />
+<!--    <item android:id="@+id/menu_item3"-->
+<!--        android:title="reload"-->
+<!--        android:icon="@drawable/reload"-->
+<!--        />-->
+</menu>
