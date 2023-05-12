@@ -65,4 +65,4 @@
             android:layout_height="44dp"
             android:text="Configure" />
     </LinearLayout>
-    .2</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
