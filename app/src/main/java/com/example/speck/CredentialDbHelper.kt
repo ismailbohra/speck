@@ -34,16 +34,19 @@ class CredentialDbHelper(context: Context) :
     fun queryData(): List<credential> {
         val dataList = mutableListOf<credential>()
         val cursor = readableDatabase.rawQuery(SELECT_ALL_SQL, null)
-        if (cursor.moveToFirst()) {
-            do {
-                val username = cursor.getString(cursor.getColumnIndex(COLUMN_NAME))
-                val psd = cursor.getString(cursor.getColumnIndex(COLUMN_AGE))
-                dataList.add(credential(username , psd))
-            } while (cursor.moveToNext())
+        val nameIndex = cursor.getColumnIndex(COLUMN_NAME)
+        val ageIndex = cursor.getColumnIndex(COLUMN_AGE)
+        while (cursor.moveToNext()) {
+            if (nameIndex != -1 && ageIndex != -1) {
+                val username = cursor.getString(nameIndex)
+                val psd = cursor.getString(ageIndex)
+                dataList.add(credential(username, psd))
+            }
         }
         cursor.close()
         return dataList
     }
+
     fun clearData() {
         writableDatabase.execSQL(DELETE_TABLE_SQL)
     }

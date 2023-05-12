@@ -33,16 +33,19 @@ class MyDatabaseHelper(context: Context) :
     fun queryData(): List<MyData> {
         val dataList = mutableListOf<MyData>()
         val cursor = readableDatabase.rawQuery(SELECT_ALL_SQL, null)
-        if (cursor.moveToFirst()) {
-            do {
-                val name = cursor.getString(cursor.getColumnIndex(COLUMN_NAME))
-                val age = cursor.getInt(cursor.getColumnIndex(COLUMN_AGE))
+        val nameIndex = cursor.getColumnIndex(COLUMN_NAME)
+        val ageIndex = cursor.getColumnIndex(COLUMN_AGE)
+        while (cursor.moveToNext()) {
+            if (nameIndex != -1 && ageIndex != -1) {
+                val name = cursor.getString(nameIndex)
+                val age = cursor.getInt(ageIndex)
                 dataList.add(MyData(name, age))
-            } while (cursor.moveToNext())
+            }
         }
         cursor.close()
         return dataList
     }
+
     fun clearData() {
         writableDatabase.execSQL(DELETE_TABLE_SQL)
     }
